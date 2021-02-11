@@ -8,7 +8,8 @@ int ledPins[] = {
  
 void setup() { 
    
-  for (int thisLed = 0; thisLed < ledCount; thisLed++) { 
+  for (int thisLed = 0; thisLed < ledCount; thisLed++)
+  { 
     pinMode(ledPins[thisLed], OUTPUT); 
   } 
   pinMode(13,OUTPUT);
@@ -20,8 +21,10 @@ void loop() {
   int ledLevel = map(sensorReading, 0, 1023, 0, ledCount); 
  
    
-  for (int thisLed = 0; thisLed < ledCount; thisLed++) { 
-    if (thisLed < ledLevel) { 
+  for (int thisLed = 0; thisLed < ledCount; thisLed++) 
+  { 
+    if (thisLed < ledLevel)
+    { 
       digitalWrite(ledPins[thisLed], HIGH); 
     } 
      
@@ -29,17 +32,18 @@ void loop() {
       digitalWrite(ledPins[thisLed], LOW); 
       digitalWrite(13,LOW);
     } 
-  }if(ledLevel==3 || ledLevel==4)
-    {digitalWrite(13,HIGH);
-     delay(70);
-     digitalWrite(13,LOW);
-     delay(70);
+  }
+  if(ledLevel==3 || ledLevel==4)
+    { digitalWrite(13,HIGH);
+      delay(70);
+      digitalWrite(13,LOW);
+      delay(70);
     }
     if(ledLevel==5)
-    {digitalWrite(13,HIGH);
-     delay(50);
-     digitalWrite(13,LOW);
-     delay(50);
+    { digitalWrite(13,HIGH);
+      delay(50);
+      digitalWrite(13,LOW);
+      delay(50);
     }
     
 }
